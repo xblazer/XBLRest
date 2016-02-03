@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <configuration scan="true" scanPeriod="30 seconds"> -->
+<configuration>
+	<property name="log_path" value="//Users/kevin/Downloads/jfinal_demo" />
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<target>System.out</target>
+		<encoder>
+			<pattern>[%d]-[%p]@[%C#%M.%L]:%m%n</pattern>
+		</encoder>
+	</appender>
+	<appender name="FILE"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<append>true</append>
+		<file>${log_path}/xblazer_cms.log</file>
+		<encoder>
+			<charset>UTF-8</charset>
+			<pattern>%m-[%d]-[%p]-[%t]-[%C#%M.%L]%n</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+			<fileNamePattern>${log_path}/ShopperApi.%i.log.zip</fileNamePattern>
+			<minIndex>1</minIndex>
+			<maxIndex>21</maxIndex>
+		</rollingPolicy>
+		<triggeringPolicy
+			class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+			<maxFileSize>10MB</maxFileSize>
+		</triggeringPolicy>
+	</appender>
+	<logger name="com.xblazer" level="DEBUG" additivity="false">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+	</logger>
+	<root level="WARN" additivity="false">
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
