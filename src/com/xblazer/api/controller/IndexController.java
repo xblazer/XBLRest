@@ -1,9 +1,9 @@
-package com.xblazer.cms.controller;
+package com.xblazer.api.controller;
 
 import com.jfinal.aop.Before;
 import com.jfinal.ext.interceptor.Restful;
 import com.jfinal.plugin.activerecord.Page;
-import com.xblazer.cms.model.Test;
+import com.xblazer.api.model.Test;
 import com.xblazer.core.annotation.ControllerConfig;
 import com.xblazer.core.annotation.NotRequireLogin;
 import com.xblazer.core.controller.BaseController;

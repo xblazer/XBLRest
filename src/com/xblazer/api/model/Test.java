@@ -1,4 +1,4 @@
-package com.xblazer.cms.model;
+package com.xblazer.api.model;
 
 import com.xblazer.core.model.BaseModel;
 import org.beetl.sql.core.annotatoin.AssignID;
